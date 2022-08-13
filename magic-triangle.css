@@ -1,0 +1,19 @@
+/* (A) BORDERS CUT AT 45 DEGREES */
+.borders {
+  width: 0;
+  border: 20px solid;
+  border-top-color: black;
+  border-bottom-color: red;
+  border-left-color: green;
+  border-right-color: blue;
+}
+
+/* (B) KEEP ONLY ONE SIDE TO CREATE CSS TRIANGLE */
+.triangle {
+  width: 0;
+  border: 20px solid transparent;
+  border-top-color: lightseagreen;
+}
+
+/* (X) DOES NOT MATTER - SPACERS */
+.borders { margin-bottom: 100px; }

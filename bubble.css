@@ -1,0 +1,119 @@
+/* (A) SPEECH BOX */
+.speech {
+  /* (A1) FONT */
+  font-family: arial, sans-serif;
+  font-size: 1.1em;
+
+  /* (A2) COLORS */
+  color: #fff;
+  background: #a53d38;
+
+  /* (A3) DIMENSIONS + POSITION */
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 320px;
+}
+
+/* (B) ADD SPEECH "CALLOUT TAIL" */
+/* (B1) USE ::AFTER TO CREATE THE "TAIL" */
+.speech::after {
+  /* (B1-1) ATTACH TRANSPARENT BORDERS */
+  content: "";
+  border: 20px solid transparent;
+
+  /* (B1-2) NECESSARY TO POSITION THE "TAIL" */
+  position: absolute;
+}
+
+/* (B2) BOTTOM "CALLOUT TAIL" */
+.bottom.speech::after {
+  /* (B2-1) DOWN TRIANGLE */
+  border-top-color: #a53d38;
+  border-bottom: 0;
+
+  /* (B2-2) POSITION AT BOTTOM */
+  bottom: -20px; left: 50%;
+  margin-left: -20px;
+}
+
+/* (C) DIFFERENT TAIL POSITIONS */
+/* (C1) TOP */
+.top.speech::after {
+  /* (C1-1) UP TRIANGLE */
+  border-bottom-color: #a53d38;
+  border-top: 0;
+
+  /* (C1-2) POSITION AT TOP */
+  top: -20px; left: 50%;
+  margin-left: -20px;
+}
+
+/* (C2) LEFT */
+.left.speech::after {
+  /* (C2-1) LEFT TRIANGLE */
+  border-right-color: #a53d38;
+  border-left: 0;
+
+  /* (C2-2) POSITION AT LEFT */
+  left: -20px; top: 50%;
+  margin-top: -20px;
+}
+
+/* (C3) RIGHT */
+.right.speech::after {
+  /* (C3-1) RIGHT TRIANGLE */
+  border-left-color: #a53d38;
+  border-right: 0;
+
+  /* (C3-2) POSITION AT RIGHT */
+  right: -20px; top: 50%;
+  margin-top: -20px;
+}
+
+/* (D) HALF TRIANGLE TAIL */
+.half.speech::after {
+  border-right-color: #a53d38;
+  bottom: -20px; left: 80%;
+}
+
+/* (E) CIRCULAR SPEECH BUBBLE */
+/* (E1) COMMON COLOR + MAKE ROUND */
+.circular, .circular::before, .circular::after {
+  background: #a53d38;
+  border-radius: 50%;
+}
+
+/* (E2) "MAIN BUBBLE" */
+.circular {
+  /* (E2-1) FONT */
+  font-family: arial, sans-serif;
+  font-size: 1.1em;
+  color: #fff;
+  text-align: center;
+
+  /* (E2-2) DIMENSIONS + POSITION */
+  padding: 30px 30px;
+  max-width: 300px;
+  position: relative;
+}
+
+/* (E3) POSITION "CALLOUT" BUBBLES */
+.circular::before, .circular::after {
+  content: "";
+  position: absolute;
+}
+.circular::before {
+  width: 20px;
+  padding: 20px;
+  right: 10px; bottom: -30px;
+}
+.circular::after {
+  width: 10px;
+  padding: 10px;
+  right: 0; bottom: -50px;
+}
+
+/* (X) DOES NOT MATTER - SPACERS */
+.speech, .circular { margin: 50px 0 0 50px; }
+body { padding-bottom: 100px; }
